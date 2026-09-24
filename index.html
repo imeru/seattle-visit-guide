@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Ecotope 방문 일정 · 시애틀 가이드</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --forest:#22423a;
+    --forest-deep:#152e28;
+    --slate:#4c6270;
+    --mist:#eef1ec;
+    --paper:#fbfaf6;
+    --ink:#1c211f;
+    --ink-soft:#4a534e;
+    --copper:#b0713a;
+    --line:#d9ddd3;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--mist);
+    color:var(--ink);
+    font-family:"Noto Sans KR", -apple-system, sans-serif;
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:"Noto Serif KR", serif;
+    font-weight:700;
+    margin:0;
+    color:var(--forest-deep);
+  }
+  a{color:var(--copper);}
+
+  header{
+    background:linear-gradient(160deg, var(--forest) 0%, var(--forest-deep) 100%);
+    color:#f2f0e8;
+    padding:44px 24px 32px;
+  }
+  .header-inner{max-width:760px;margin:0 auto;}
+  header .eyebrow{
+    font-size:14px;
+    color:#c9d6cd;
+    margin-bottom:8px;
+  }
+  header h1{
+    color:#fff;
+    font-size:28px;
+    line-height:1.4;
+  }
+  header p.sub{
+    margin-top:10px;
+    color:#d7ddd2;
+    font-size:15px;
+    max-width:520px;
+  }
+
+  nav.tabs{
+    max-width:760px;
+    margin:0 auto;
+    display:flex;
+    gap:4px;
+    padding:0 24px;
+    margin-top:28px;
+  }
+  nav.tabs button{
+    flex:1;
+    padding:13px 10px;
+    border:none;
+    background:rgba(255,255,255,0.08);
+    color:#e7ebe3;
+    font-family:"Noto Sans KR", sans-serif;
+    font-size:15px;
+    font-weight:500;
+    cursor:pointer;
+    border-radius:8px 8px 0 0;
+    transition:background 0.15s ease;
+  }
+  nav.tabs button.active{
+    background:var(--paper);
+    color:var(--forest-deep);
+    font-weight:700;
+  }
+
+  main{max-width:760px;margin:0 auto;padding:0 24px 60px;}
+  .panel{display:none;}
+  .panel.active{display:block;}
+
+  /* --- schedule --- */
+  .meta-box{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:20px 22px;
+    margin:28px 0 8px;
+  }
+  .meta-box h2{font-size:18px;margin-bottom:10px;}
+  .meta-box p{margin:4px 0;color:var(--ink-soft);font-size:15px;}
+  .meta-box .num{color:var(--forest-deep);font-weight:700;}
+
+  .timeline{
+    margin-top:32px;
+    border-left:2px solid var(--line);
+    padding-left:0;
+  }
+  .t-item{
+    position:relative;
+    padding:0 0 26px 26px;
+    border-left:2px solid var(--line);
+    margin-left:6px;
+  }
+  .t-item:last-child{border-left:2px solid transparent;padding-bottom:0;}
+  .t-item::before{
+    content:"";
+    position:absolute;
+    left:-7px;
+    top:4px;
+    width:12px;
+    height:12px;
+    border-radius:50%;
+    background:var(--paper);
+    border:2px solid var(--forest);
+  }
+  .t-item.break::before{background:var(--copper);border-color:var(--copper);}
+  .t-time{
+    font-family:"Noto Serif KR", serif;
+    font-weight:700;
+    font-size:15px;
+    color:var(--forest-deep);
+  }
+  .t-title{font-size:16px;font-weight:700;margin-top:2px;}
+  .t-desc{color:var(--ink-soft);font-size:14.5px;margin-top:4px;}
+
+  .note{
+    background:#fff6ea;
+    border:1px solid #e9d7ba;
+    border-radius:8px;
+    padding:14px 16px;
+    font-size:14px;
+    color:#5c4322;
+    margin-top:28px;
+  }
+
+  /* --- guide --- */
+  .guide-section{margin-top:38px;}
+  .guide-section h2{
+    font-size:20px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .guide-section h2 .icon{
+    width:26px;height:26px;flex:none;
+    color:var(--forest);
+  }
+  .guide-section > p.lead{
+    color:var(--ink-soft);
+    font-size:14.5px;
+    margin-top:6px;
+    margin-bottom:16px;
+  }
+  .card{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:16px 18px;
+    margin-bottom:12px;
+  }
+  .card h3{font-size:15.5px;color:var(--forest-deep);}
+  .card .tag{
+    display:inline-block;
+    font-size:12px;
+    color:var(--slate);
+    margin-left:8px;
+    font-family:"Noto Sans KR", sans-serif;
+    font-weight:400;
+  }
+  .card p{margin:6px 0 0;font-size:14.5px;color:var(--ink-soft);}
+  .card p a{color:var(--copper);text-decoration:none;border-bottom:1px solid rgba(176,113,58,0.4);}
+  .card h3 a{color:var(--forest-deep);text-decoration:none;border-bottom:1px solid var(--copper);padding-bottom:1px;}
+  .card h3 a:hover, .card p a:hover{color:var(--copper);}
+
+  .card.has-photo{padding:0;overflow:hidden;}
+  .card.has-photo .card-body{padding:14px 18px 16px;}
+  .card figure{margin:0;}
+  .card figure img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;background:var(--line);}
+  .card figcaption{font-size:11.5px;color:var(--ink-soft);padding:6px 18px 0;line-height:1.5;}
+  .card figcaption a{color:var(--ink-soft);text-decoration:underline;border:none;}
+
+  hr.div{border:none;border-top:1px solid var(--line);margin:44px 0 0;}
+
+  .dl-wrap{
+    max-width:760px;
+    margin:36px auto 0;
+    padding:0 24px 50px;
+    text-align:center;
+  }
+  .dl-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:var(--forest);
+    color:#fff;
+    border:none;
+    padding:13px 26px;
+    border-radius:8px;
+    font-family:"Noto Sans KR", sans-serif;
+    font-size:14.5px;
+    font-weight:500;
+    cursor:pointer;
+  }
+  .dl-btn:hover{background:var(--forest-deep);}
+  .dl-hint{margin-top:10px;font-size:12.5px;color:var(--ink-soft);}
+
+  @media (max-width:480px){
+    header h1{font-size:23px;}
+    nav.tabs button{font-size:13.5px;padding:12px 6px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="eyebrow">MOLIT 건물 에너지 캡 연구팀 · Ecotope, Inc.</div>
+    <h1>Seattle 방문 일정 안내</h1>
+    <p class="sub">2026년 9월 30일(수) Ecotope 방문 일정과, 짬이 날 때 들러볼 만한 시애틀 안내를 한 페이지에 담았습니다.</p>
+  </div>
+  <nav class="tabs">
+    <button class="active" data-tab="schedule">9/30 일정</button>
+    <button data-tab="guide">시애틀 가이드</button>
+  </nav>
+</header>
+
+<main>
+
+  <!-- ================= SCHEDULE ================= -->
+  <section id="schedule" class="panel active">
+
+    <div class="meta-box">
+      <h2>방문단 개요</h2>
+      <p>한국에서 이동하는 인원 <span class="num">11명</span>과 통역 <span class="num">1명</span>, 총 <span class="num">12명</span>이 9월 28일(월) 시애틀에 도착합니다.</p>
+      <p>9월 29일(화) 오전, 시애틀시 지속가능성환경국(OSE)과 시청에서 정책 관련 회의가 예정되어 있습니다.</p>
+      <p>9월 30일(수)에는 Ecotope를 방문해 실무자 관점의 이행 사례를 듣습니다.</p>
+    </div>
+
+    <div class="timeline">
+
+      <div class="t-item">
+        <div class="t-time">10:00 – 10:20</div>
+        <div class="t-title">환영 인사 및 Ecotope 소개 — Jon Heller</div>
+        <div class="t-desc">발표 자료는 약 10분 분량. 순차통역이 붙어 실제로는 약 20분 소요됩니다.</div>
+      </div>
+
+      <div class="t-item">
+        <div class="t-time">10:20 – 11:00</div>
+        <div class="t-title">컴플라이언스 프로세스 단계별 설명 — Mitch Young</div>
+      </div>
+
+      <div class="t-item">
+        <div class="t-time">11:00 – 11:30</div>
+        <div class="t-title">Seattle Justice Center 브리핑 — Morgan Heater</div>
+        <div class="t-desc">오후에 투어할 건물에 대한 사전 설명. 발표 자료는 약 15분 분량, 통역 포함 약 30분.</div>
+      </div>
+
+      <div class="t-item">
+        <div class="t-time">11:30 – 12:00</div>
+        <div class="t-title">자유 질의응답 및 토론</div>
+      </div>
+
+      <div class="t-item break">
+        <div class="t-time">12:00 – 13:30</div>
+        <div class="t-title">점심 식사</div>
+        <div class="t-desc">배달 음식(샌드위치)으로 준비합니다. Ecotope 팀도 함께합니다.</div>
+      </div>
+
+      <div class="t-item">
+        <div class="t-time">13:30</div>
+        <div class="t-title">Seattle Justice Center로 이동</div>
+      </div>
+
+      <div class="t-item">
+        <div class="t-time">14:00 – 15:30</div>
+        <div class="t-title">건물 투어</div>
+        <div class="t-desc">약 1시간 30분 소요됩니다.</div>
+      </div>
+
+    </div>
+
+    <div class="note">
+      시간은 확정된 일정이지만, 통역 진행 속도에 따라 앞뒤로 몇 분씩 조정될 수 있습니다. 세부 시간이 바뀌면 이 페이지를 다시 갱신하겠습니다.
+    </div>
+
+  </section>
+
+  <!-- ================= GUIDE ================= -->
+  <section id="guide" class="panel">
+
+    <p class="lead" style="margin-top:24px;">공식 일정 사이사이, 혹은 방문 앞뒤로 시간이 남을 때 들러보면 좋을 곳들입니다. 도보나 짧은 이동으로 갈 수 있는 곳 위주로 골랐습니다. 각 항목 제목을 누르면 구글맵으로 바로 연결됩니다. 소규모 업체는 영업시간이나 폐업 여부가 바뀌는 경우가 있어, 방문 전 구글맵에서 한 번 더 확인하시길 권합니다.</p>
+
+    <div class="guide-section">
+      <h2><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V6a2 2 0 0 1 2-2h9l5 5v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"></path><path d="M15 4v5h5"></path><path d="M8 15l2.5-3 2 2L16 10"></path></svg>액티비티</h2>
+      <div class="card">
+        <h3><a href="https://www.google.com/maps/search/?api=1&query=Northwest+Outdoor+Center+Seattle" target="_blank" rel="noopener">Lake Union 카약 · 패들보드</a></h3>
+        <p>호수 서쪽의 Northwest Outdoor Center, 남쪽의 <a href="https://www.google.com/maps/search/?api=1&query=Moss+Bay+1001+Fairview+Ave+N+Seattle" target="_blank" rel="noopener">Moss Bay</a>, University District 쪽의 <a href="https://www.google.com/maps/search/?api=1&query=Agua+Verde+Paddle+Club+Seattle" target="_blank" rel="noopener">Agua Verde Paddle Club</a>에서 대여할 수 있습니다. 물결이 잔잔해 초보자도 어렵지 않고, 수상비행기가 이착륙하는 모습과 Space Needle 전망을 함께 볼 수 있습니다.</p>
+        <p><strong>요일 주의 (2026년 9월 기준 게시 시간).</strong> Northwest Outdoor Center는 월, 화 휴무, Moss Bay는 화 휴무, Agua Verde는 화~목 휴무입니다. 방문 기간 중에는 9/30(수), 10/1(목)에 Northwest Outdoor Center와 Moss Bay를, 9/28(월)에는 Moss Bay와 Agua Verde를 이용할 수 있습니다. 바람이나 날씨가 나쁘면 일찍 닫습니다.</p>
+      </div>
+      <div class="card">
+        <h3>Lake Union 패들보드 라이딩 <span class="tag">추천 활동</span></h3>
+        <p>위 업체들에서 패들보드(SUP)도 함께 대여합니다. 저녁 무렵에는 Queen Anne 언덕 너머로 지는 해와 하우스보트가 늘어선 풍경이 특히 좋다는 평이 많습니다.</p>
+      </div>
+      <div class="card">
+        <h3><a href="https://www.google.com/maps/search/?api=1&query=Recycled+Cycles+Seattle" target="_blank" rel="noopener">자전거로 Burke-Gilman Trail</a></h3>
+        <p>University District의 Recycled Cycles에서 자전거를 빌려 Lake Union을 한 바퀴 돌거나, Burke-Gilman Trail을 따라 Fremont와 Gas Works Park까지 달릴 수 있습니다. 요금은 대여 종류에 따라 달라 매장 홈페이지의 예약 페이지에서 확인하는 편이 정확합니다.</p>
+      </div>
+      <div class="card has-photo">
+        <figure>
+          <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Waterfront_Park_watch_party_-_2026_FIFA_World_Cup_in_Seattle.jpg/960px-Waterfront_Park_watch_party_-_2026_FIFA_World_Cup_in_Seattle.jpg" alt="새로 조성된 Waterfront Park와 뒤편의 Great Wheel, Elliott Bay (2026년 7월, 월드컵 응원 행사)" loading="lazy" width="960" height="540">
+          <figcaption>사진: <a href="https://commons.wikimedia.org/wiki/File:Waterfront_Park_watch_party_-_2026_FIFA_World_Cup_in_Seattle.jpg" target="_blank" rel="noopener">SounderBruce</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener">CC BY-SA 4.0</a>, Wikimedia Commons</figcaption>
+        </figure>
+        <div class="card-body">
+          <h3><a href="https://www.google.com/maps/search/?api=1&query=Waterfront+Park+Seattle" target="_blank" rel="noopener">워터프론트 산책</a></h3>
+          <p>2025년 9월 새로 개장한 Seattle Waterfront Park가 다운타운 수변을 따라 이어집니다. Coast Salish 조각가 Qwalsius-Shaun Peterson의 작품 Family를 비롯한 공공 예술 설치가 곳곳에 있습니다.</p>
+        </div>
+      </div>
+      <div class="card has-photo">
+        <figure>
+          <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/Calder_eagle_%26_space_needle_0408.JPG/960px-Calder_eagle_%26_space_needle_0408.JPG" alt="Alexander Calder의 조각 Eagle과 뒤편의 Space Needle" loading="lazy" width="960" height="540">
+          <figcaption>사진: <a href="https://commons.wikimedia.org/wiki/File:Calder_eagle_%26_space_needle_0408.JPG" target="_blank" rel="noopener">Ronincmc</a>, Public domain, Wikimedia Commons</figcaption>
+        </figure>
+        <div class="card-body">
+          <h3><a href="https://www.google.com/maps/search/?api=1&query=Olympic+Sculpture+Park+Seattle" target="_blank" rel="noopener">Olympic Sculpture Park</a></h3>
+          <p>워터프론트 북쪽 끝에 자리한 무료 야외 조각공원으로, Seattle Art Museum이 운영합니다. 바로 옆 Myrtle Edwards Park와 Centennial Park는 2026년 6월 리노베이션을 마치고 재개장해, 워터프론트 산책과 이어서 걷기 좋습니다. 10월 1일(목)은 매월 첫째 목요일 무료 입장일(Free First Thursday)이라 다운타운의 Seattle Art Museum 본관도 무료로 볼 수 있습니다.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="guide-section">
+      <h2><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.2-7-11a7 7 0 0 1 14 0c0 5.8-7 11-7 11Z"></path><circle cx="12" cy="10" r="2.6"></circle></svg>랜드마크</h2>
+      <div class="card has-photo">
+        <figure>
+          <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Seattle_%28WA%2C_USA%29%2C_Space_Needle_--_2022_--_1498.jpg/960px-Seattle_%28WA%2C_USA%29%2C_Space_Needle_--_2022_--_1498.jpg" alt="4th Avenue에서 바라본 Space Needle" loading="lazy" width="960" height="540">
+          <figcaption>사진: <a href="https://commons.wikimedia.org/wiki/File:Seattle_(WA,_USA),_Space_Needle_--_2022_--_1498.jpg" target="_blank" rel="noopener">Dietmar Rabich</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener">CC BY-SA 4.0</a>, Wikimedia Commons</figcaption>
+        </figure>
+        <div class="card-body">
+          <h3><a href="https://www.google.com/maps/search/?api=1&query=Space+Needle+Seattle" target="_blank" rel="noopener">Space Needle</a></h3>
+          <p>1962년 시애틀 세계박람회를 위해 세워진 상징적 전망탑입니다. 전망대에서 다운타운과 Puget Sound, 날이 맑으면 Mt. Rainier까지 보입니다.</p>
+        </div>
+      </div>
+      <div class="card has-photo">
+        <figure>
+          <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/Space_Needle_reflection_from_Chihuly_Gardens.jpg/960px-Space_Needle_reflection_from_Chihuly_Gardens.jpg" alt="정원의 푸른 유리 구체에 비친 Space Needle" loading="lazy" width="960" height="540">
+          <figcaption>사진: <a href="https://commons.wikimedia.org/wiki/File:Space_Needle_reflection_from_Chihuly_Gardens.jpg" target="_blank" rel="noopener">Rholland.03</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener">CC BY-SA 4.0</a>, Wikimedia Commons</figcaption>
+        </figure>
+        <div class="card-body">
+          <h3><a href="https://www.google.com/maps/search/?api=1&query=Chihuly+Garden+and+Glass+Seattle" target="_blank" rel="noopener">Chihuly Garden and Glass</a></h3>
+          <p>Space Needle 바로 옆. 유리공예가 Dale Chihuly의 대형 유리 설치작품을 실내 갤러리와 온실, 야외 정원에 걸쳐 전시합니다. 온실(Glasshouse)은 일찍 닫는 날이 있어(9/28 16:00, 9/29 14:30, 10/1 16:00) 온실이 목적이면 오후 이른 시간에 가는 편이 좋습니다.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="guide-section">
+      <h2><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h14l-1 11a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5L3 3Z"></path><path d="M17 7h2a3 3 0 0 1 0 6h-2"></path><path d="M7 3v0"></path><path d="M11 3v0"></path></svg>Pike Place Market</h2>
+      <p class="lead">시장 안팎으로 워낙 볼거리와 먹을거리가 많아, 몇 곳만 추려봤습니다.</p>
+      <div class="card">
+        <h3><a href="https://www.google.com/maps/search/?api=1&query=Original+Starbucks+1912+Pike+Place+Seattle" target="_blank" rel="noopener">오리지널 스타벅스</a> <span class="tag">1912 Pike Place</span></h3>
+        <p>1971년 창업한 스타벅스가 1976년 옮겨 온 뒤 지금까지 영업 중인 가장 오래된 매장으로, 흔히 1호점으로 불립니다(최초 매장은 인근 2000 Western Ave에 있었고 지금은 남아 있지 않습니다). 리노베이션을 거쳐 2026년 6월 "The 1912 Pike Place Experience"로 재개장했고, 입장은 매장 앞에서 직원이 나눠주는 시간대별 예약제로 바뀌었습니다. 줄이 부담스럽다면 바로 옆 Post Alley 쪽 <a href="https://www.google.com/maps/search/?api=1&query=Ghost+Alley+Espresso+Seattle" target="_blank" rel="noopener">Ghost Alley Espresso</a>가 대안이 됩니다.</p>
+      </div>
+      <div class="card">
+        <h3><a href="https://www.google.com/maps/search/?api=1&query=Pike+Place+Chowder+Seattle" target="_blank" rel="noopener">Pike Place Chowder</a> <span class="tag">1530 Post Alley</span></h3>
+        <p>클램차우더로 여러 차례 수상한 시애틀 대표 맛집입니다. 사워도우 브레드볼에 담아주는 메뉴가 인기가 많습니다.</p>
+      </div>
+      <div class="card">
+        <h3><a href="https://www.google.com/maps/search/?api=1&query=Piroshky+Piroshky+Seattle" target="_blank" rel="noopener">Piroshky Piroshky</a></h3>
+        <p>1992년 개업한 러시아식 피로시키(속을 채운 빵) 전문점입니다. 연어, 소고기치즈 등 짭짤한 종류와 달콤한 종류를 함께 팝니다.</p>
+      </div>
+      <div class="card">
+        <h3><a href="https://www.google.com/maps/search/?api=1&query=Pike+Place+Fish+Market+Seattle" target="_blank" rel="noopener">Pike Place Fish Market</a></h3>
+        <p>생선을 사면 점원들이 서로 던지고 받는 퍼포먼스로 유명한 어시장입니다. 구경만 해도 재미있습니다.</p>
+      </div>
+    </div>
+
+    <div class="guide-section">
+      <h2><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h13v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V9Z"></path><path d="M17 10h1.5a2.5 2.5 0 0 1 0 5H17"></path><path d="M7 5c0-.8.5-1 .5-1.8S7 2 7 2"></path><path d="M11 5c0-.8.5-1 .5-1.8S11 2 11 2"></path></svg>커피</h2>
+      <p class="lead">시애틀은 스타벅스(1971년 창업)의 발상지이면서, 1990년대 이후 소규모 스페셜티 로스터리 문화가 나란히 자란 도시입니다. 원두를 직접 볶는 동네 카페가 유독 많습니다.</p>
+      <div class="card">
+        <h3><a href="https://www.google.com/maps/search/?api=1&query=Espresso+Vivace+532+Broadway+E+Seattle" target="_blank" rel="noopener">Espresso Vivace</a> <span class="tag">Capitol Hill, 532 Broadway E</span></h3>
+        <p>라떼아트를 미국에 대중화시킨 David Schomer가 1988년 세운 곳으로, 시애틀 스페셜티 커피의 원조 격입니다. 현재 매장은 Capitol Hill의 Broadway 본점과 South Lake Union 두 곳입니다.</p>
+      </div>
+      <div class="card">
+        <h3><a href="https://www.google.com/maps/search/?api=1&query=Victrola+Coffee+Roasters+Capitol+Hill+Seattle" target="_blank" rel="noopener">Victrola Coffee Roasters</a> <span class="tag">Capitol Hill 외 다수</span></h3>
+        <p>2000년 문을 연 동네 로스터리로, 매장마다 분위기가 조금씩 다릅니다.</p>
+      </div>
+      <div class="card">
+        <h3><a href="https://www.google.com/maps/search/?api=1&query=Caffe+Vita+Capitol+Hill+Seattle" target="_blank" rel="noopener">Caffe Vita</a> <span class="tag">Capitol Hill</span></h3>
+        <p>소규모 로스터리 원두를 중심으로 운영하는 시애틀의 오래된 카페 체인입니다.</p>
+      </div>
+    </div>
+
+    <div class="guide-section">
+      <h2><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 11h9v6a3 3 0 0 1-3 3H8a3 3 0 0 1-3-3v-6Z"></path><path d="M14 12h2a2 2 0 0 1 0 4h-2"></path><path d="M7 11c0-1.3.6-1.6 1-2.5S7.6 6.8 8.5 6"></path><path d="M10.5 11c0-1.3.6-1.6 1-2.5S11.1 6.8 12 6"></path></svg>맥주</h2>
+
+      <p class="lead"><strong style="color:var(--forest-deep);">왜 유명한가.</strong> 미국 홉의 약 75퍼센트가 워싱턴주, 그중에서도 시애틀에서 동남쪽으로 약 230km 떨어진 Yakima Valley에서 재배됩니다. 산지가 가까운 덕에 1980년대 미국 크래프트 맥주 부흥기부터 시애틀은 서부 해안의 중심지 중 하나였습니다. 1981년 문을 연 Redhook Ale Brewery가 초창기를 대표하고(2025년 시애틀 양조장을 닫아 지금은 방문할 매장이 없습니다), 1989년 개업한 Pike Brewing도 이 시기를 대표하는 이름입니다. 다만 Pike Brewing은 최근 몇 년 사이 매장을 자주 열고 닫아 왔고, Pike Place Market 옆에서 35년간 영업하던 Pike Pub과 Pike Fish Bar도 2025년 11월 30일 자로 문을 닫았습니다. 그래서 이 가이드에는 매장 정보가 비교적 안정적인 곳 위주로 담았습니다.</p>
+
+      <p class="lead"><strong style="color:var(--forest-deep);">뭐가 유명한가.</strong> 홉의 쓴맛과 송진, 시트러스 향을 앞세우고 맥주 자체는 맑고 투명한 웨스트코스트 IPA가 이 지역의 오랜 전통입니다. 2010년대 중반부터는 동부에서 건너온 Hazy IPA(뿌옇게 탁하고, 쓴맛은 낮추는 대신 열대과일 향을 강조하는 스타일)도 자리를 잡아, 지금은 두 스타일이 나란히 공존합니다.</p>
+
+      <p class="lead"><strong style="color:var(--forest-deep);">추천.</strong></p>
+      <div class="card">
+        <h3><a href="https://www.google.com/maps/search/?api=1&query=Reuben%27s+Brews+Ballard+Seattle" target="_blank" rel="noopener">Reuben's Brews</a> <span class="tag">Ballard</span></h3>
+        <p>시애틀에 Hazy IPA를 처음 정착시킨 양조장 중 하나로 꼽힙니다. Pike Place Market과 Seattle Art Museum 근처에 <a href="https://www.google.com/maps/search/?api=1&query=Reuben%27s+Brews+1201+1st+Ave+Seattle" target="_blank" rel="noopener">다운타운 탭룸(1201 1st Ave)</a>도 있어 일정 중 들르기 쉽습니다.</p>
+      </div>
+      <div class="card">
+        <h3><a href="https://www.google.com/maps/search/?api=1&query=Cloudburst+Brewing+Seattle" target="_blank" rel="noopener">Cloudburst Brewing</a> <span class="tag">Belltown</span></h3>
+        <p>대부분의 IPA 라인업이 뿌옇게 탁한 스타일로, 헤이지 IPA 전문 양조장에 가깝습니다. Western Ave 탭룸은 월, 화 휴무입니다. 2026년 5월 워싱턴주 양조장 Bale Breaker에 인수됐지만 양조팀과 매장은 그대로 운영됩니다.</p>
+      </div>
+      <div class="card">
+        <h3><a href="https://www.google.com/maps/search/?api=1&query=Urban+Family+Brewing+Ballard+Seattle" target="_blank" rel="noopener">Urban Family Brewing</a> <span class="tag">Ballard</span></h3>
+        <p>Ballard 탭룸은 매일 문을 엽니다(월~토 8~22시, 일 8~21시). 워터프론트(1022 Alaskan Way)에 새 매장을 준비 중인데, 9월 말 현재 개장 여부가 확인되지 않았습니다.</p>
+      </div>
+    </div>
+
+  </section>
+
+</main>
+
+<div class="dl-wrap">
+  <button class="dl-btn" onclick="downloadPage()">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+    이 페이지 파일로 저장 (오프라인 열람용)
+  </button>
+  <div class="dl-hint">저장한 파일은 인터넷 연결 없이도 브라우저로 그대로 열립니다.</div>
+</div>
+
+<script>
+  document.querySelectorAll('nav.tabs button').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      document.querySelectorAll('nav.tabs button').forEach(b=>b.classList.remove('active'));
+      document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById(btn.dataset.tab).classList.add('active');
+    });
+  });
+
+  function downloadPage(){
+    try{
+      const html = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+      const blob = new Blob([html], {type: 'text/html'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'seattle-visit-guide.html';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }catch(e){
+      alert('다운로드에 실패했습니다. 브라우저 메뉴에서 페이지 저장(Ctrl/Cmd+S)을 이용해 주세요.');
+    }
+  }
+</script>
+
+</body>
+</html>
